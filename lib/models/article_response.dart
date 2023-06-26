@@ -5,12 +5,14 @@ class ArticleResponse {
   final String error;
 
   ArticleResponse(this.articles, this.error);
+
   ArticleResponse.fromJson(Map<String, dynamic> json)
       : articles = (json["articles"] as List)
             .map((i) => ArticleModel.fromJson(i))
             .toList(),
         error = "";
+
   ArticleResponse.withError(String errorValue)
-      : articles = [],
+      : articles = List.empty(),
         error = errorValue;
 }

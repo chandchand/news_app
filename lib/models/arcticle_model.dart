@@ -1,4 +1,7 @@
+import 'package:news_app/models/source_model.dart';
+
 class ArticleModel {
+  final SourceModels source;
   final String author;
   final String title;
   final String description;
@@ -7,15 +10,26 @@ class ArticleModel {
   final String date;
   final String content;
 
-  ArticleModel(this.author, this.title, this.description, this.url, this.date,
-      this.img, this.content);
+  ArticleModel({
+    required this.source,
+    required this.author,
+    required this.title,
+    required this.description,
+    required this.url,
+    required this.img,
+    required this.date,
+    required this.content,
+  });
 
   ArticleModel.fromJson(Map<String, dynamic> json)
-      : author = json["author"],
+      : source = json["source"] != null
+            ? SourceModels.fromJson(json["source"] as Map<String, dynamic>)
+            : SourceModels("", "", "", "", "", "", ""),
+        author = json["author"],
         title = json["title"],
         description = json["description"],
         url = json["url"],
-        img = json["urlToImage"],
+        img = json["urlToImage"] ?? "",
         date = json["publishedAt"],
-        content = json["content"];
+        content = json["content"] ?? "";
 }

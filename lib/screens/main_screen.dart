@@ -1,6 +1,7 @@
 import 'package:eva_icons_flutter/eva_icons_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/bloc/bottNav_bloc.dart';
+import 'package:news_app/screens/tabs/home_page.dart';
 import 'package:news_app/style/theme.dart' as Style;
 
 class MainScreen extends StatefulWidget {
@@ -41,7 +42,7 @@ class _MainScreenState extends State<MainScreen> {
           builder: (BuildContext context, AsyncSnapshot<NavBarItem> snapshot) {
             switch (snapshot.data) {
               case NavBarItem.HOME:
-                return testScreen();
+                return HomePage();
               case NavBarItem.SEARCH:
                 return testScreen();
               case NavBarItem.SOURCES:

@@ -15,7 +15,7 @@ class SourceModels {
         name = json["name"],
         description = json["description"],
         url = json["url"],
-        category = json["urlToImage"],
-        language = json["publishedAt"],
-        country = json["country"];
+        category = json["category"],
+        country = json["country"],
+        language = json["language"];
 }

@@ -8,14 +8,9 @@ class GetTopHeadlinesBloc {
       BehaviorSubject<ArticleResponse>();
 
   getHeadlines() async {
-    ArticleResponse response = await _repository.getTopHeadLines();
+    ArticleResponse response = await _repository.getTopHeadlines();
     _subject.sink.add(response);
   }
-
-  // getHeadlines() async {
-  //   ArticleResponse response = await _repository.getTopHeadlines();
-  //   _subject.sink.add(response);
-  // }
 
   dispose() {
     _subject.close();

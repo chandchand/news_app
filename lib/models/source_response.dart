@@ -11,6 +11,6 @@ class SourceResponse {
             .toList(),
         error = "";
   SourceResponse.withError(String errorValue)
-      : articles = [],
+      : articles = List.empty(),
         error = errorValue;
 }
